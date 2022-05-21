@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+</head>
+<body>
+<h1>Inicio</h1>
+<a th:href="@{/agregar}">Crear Usuario</a>
+<div th:if="${usuarios != null and !usuarios.isEmpty()}">
+    <table border="1">
+        <tr>
+            <th>Primer Nombre</th>
+            <th>Segundo Nombre</th>
+            <th>Primer Apellido</th>
+            <th>Segundo Apellido</th>
+            <th>Identificacion</th>
+            <th>Nombre Usuario</th>
+            <th>Clave</th>
+            <th>Telefono</th>
+            <th>Email</th>
+            <th>Cargo</th>
+        </tr>
+        <tr th:each="usuario : ${usuarios}">
+            <td th:text="${usuario.primerNombre}">Mostrar Primer Nombre</td>
+            <td th:text="${usuario.segundoNombre}">Mostrar Segundo Nombre</td>
+            <td th:text="${usuario.primerApellido}">Mostrar Primer Apellido</td>
+            <td th:text="${usuario.segundoApellido}">Mostrar Segundo Apellido</td>
+            <td th:text="${usuario.identificacion}">Mostrar Idenficacion</td>
+            <td th:text="${usuario.nomUsr}">Mostrar Nombre Usuario</td>
+            <td th:text="${usuario.clave}">Mostrar Clave</td>
+            <td th:text="${usuario.telefono}">Mostrar Telefono</td>
+            <td th:text="${usuario.email}">Mostrar Email</td>
+            <td th:text="${usuario.cargo}">Mostrar Cargo</td>
+        </tr>
+    </table>
+</div>
+<div th:if="${usuarios == null or usuarios.isEmpty()}">
+    La Lista de usuarios esta vacia
+</div>
+</body>
+</html>

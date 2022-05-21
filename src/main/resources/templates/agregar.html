@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Datos de la persona</title>
+</head>
+<body>
+    <h1>Datos de la persona</h1>
+    <a th:href="@{/}">Regresar</a>
+    <br/>
+    <form th:action="@{/guardar}" method="post" th:object="${usuario}">
+        <label for="primernombre">Primer Nombre</label>
+        <input type="text" name="Primer Nombre" th:field="*{primerNombre}"/>
+        <br/>
+        <label for="segundonombre">Segundo Nombre</label>
+        <input type="text" name="Segundo Nombre" th:field="*{segundoNombre}"/>
+        <br/>
+        <label for="primerapellido">Primer Apellido</label>
+        <input type="text" name="Primer Apellido" th:field="*{primerApellido}"/>
+        <br/>
+        <label for="Segundoapellido">Segundo Apellido</label>
+        <input type="text" name="Segundo Apellido" th:field="*{segundoApellido}"/>
+        <br/>
+        <label for="identificacion">Identificacion</label>
+        <input type="number" name="identificacion" th:field="*{identificacion}"/>
+        <br/>
+        <label for="nombreusuario">Nombre Usuario</label>
+        <input type="text" name="nombreusuario" th:field="*{nomUsr}"/>
+        <br/>
+        <label for="clave">Clave</label>
+        <input type="text" name="clave" th:field="*{clave}"/>
+        <br/>
+        <label for="telefono">Telefono</label>
+        <input type="text" name="telefono" th:field="*{telefono}"/>
+        <br/>
+        <label for="email">Email</label>
+        <input type="email" name="email" th:field="*{email}"/>
+        <br/>
+        <label for="cargo">Cargo</label>
+        <input type="text" name="cargo" th:field="*{cargo}"/>
+        <br/>
+        <input type="submit" name="guardar" value="Guardar"/>
+
+    </form>
+</body>
+</html>
